@@ -1,0 +1,6 @@
+CREATE TABLE _event (
+    id SERIAL NOT NULL PRIMARY KEY,
+    _titre character varying(100),
+    _date DATE,
+    _description character varying(100)
+);
