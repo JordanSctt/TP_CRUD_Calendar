@@ -1,3 +1,9 @@
+package servlet;
+
+import event.Event;
+import event.EventRepository;
+import generic.RepositoryException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,3 +1,5 @@
+package generic;
+
 import java.sql.*;
 
 public class JDBCUtils {

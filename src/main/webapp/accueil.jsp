@@ -32,8 +32,7 @@
                     <td><c:out value="${ event.description }" /></td>                    
                     <td>
                     <form action="event/delete" method="POST"><button class="btn btn-outline-danger" name="eventRemove" type="submit" value="${event.id}">Supprimer</button></form>
-                    <a type="button" class="btn btn-outline-danger" href="updateEvent.jsp">Modifiert</a> 
-                    <!-- <a href="${pageContext.request.contextPath}/event/update?id=<c:out value="${ event.id }"/>"/>Modifier<a/>-->
+                    <a class="btn btn-outline-danger" href="${pageContext.request.contextPath}/event/update?event_id=<c:out value="${ event.id }"/>"/>Modifier<a/>
                     </td>
                     
                 </tr>

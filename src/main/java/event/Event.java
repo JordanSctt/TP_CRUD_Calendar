@@ -1,3 +1,7 @@
+package event;
+
+import generic.StringTool;
+
 import java.util.Date;
 
 

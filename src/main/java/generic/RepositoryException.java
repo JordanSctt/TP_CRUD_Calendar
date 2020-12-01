@@ -1,4 +1,4 @@
-
+package generic;
 
 public class RepositoryException extends Exception {
 

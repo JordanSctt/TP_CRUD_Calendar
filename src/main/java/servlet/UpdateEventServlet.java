@@ -1,3 +1,9 @@
+package servlet;
+
+import event.Event;
+import event.EventRepository;
+import generic.RepositoryException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +31,7 @@ public class UpdateEventServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String strid = request.getParameter("eventUpdate");
+        String strid = request.getParameter(EVENT_ID);
         int id = parseInt(strid);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -36,8 +42,8 @@ public class UpdateEventServlet extends HttpServlet {
              event.setDescription(request.getParameter(DESCRIPTION));
             repository.updateEvent(event, id); 
             
+            //request.getRequestDispatcher("/event").forward(request, response);
             response.sendRedirect(request.getContextPath() + "/event");
-            
         } catch (RepositoryException | ParseException e) {
             e.printStackTrace();
         }
@@ -51,7 +57,7 @@ public class UpdateEventServlet extends HttpServlet {
 			event = findOrNull(request);			
 			if(event != null) {
 	            request.setAttribute("event", event);
-	            request.getRequestDispatcher("/box-affected.jsp").forward(request, response);
+	            request.getRequestDispatcher("/updateEvent.jsp").forward(request, response);
 	        } else {
 	            redirectUpdatedError(request, response);
 	        }
